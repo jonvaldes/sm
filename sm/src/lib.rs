@@ -507,7 +507,6 @@
     variant_size_differences
 )]
 #![warn(
-    non_snake_case,
     rust_2018_idioms,
     unused_import_braces,
     unused_lifetimes,

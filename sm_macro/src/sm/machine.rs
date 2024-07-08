@@ -138,12 +138,12 @@ impl ToTokens for Machine {
         let initial_states = &self.initial_states;
         let states = &self.states();
         let events = &self.events();
-        let machine_enum = MachineEnum { machine: &self };
+        let machine_enum = MachineEnum { machine: self };
         let transitions = &self.transitions;
 
         tokens.extend(quote! {
             #[allow(non_snake_case)]
-            mod #name {
+            pub mod #name {
                 use sm::{AsEnum, Event, InitialState, Initializer, Machine as M, NoneEvent, State, Transition};
 
                 #[derive(Debug, Eq, PartialEq, Clone)]
